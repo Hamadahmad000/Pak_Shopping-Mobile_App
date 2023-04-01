@@ -1,4 +1,4 @@
-const { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } = require('../ActionTypes');
+const {ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST} = require('../ActionTypes');
 
 const initialState = [];
 
@@ -17,5 +17,4 @@ const WishReducer = (state = initialState, action) => {
   }
 };
 
-
-export default WishReducer
+export default WishReducer;

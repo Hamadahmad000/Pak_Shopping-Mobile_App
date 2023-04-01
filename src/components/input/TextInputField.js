@@ -5,7 +5,7 @@ const TextInputField = ({type,OnChangeText,value,icon,placeholder,keyboardtype})
   return (
     <View style={styles.inputContainer}>
       <Image source={icon} style={styles.InputIcon}/>
-      <TextInput placeholder={placeholder} secureTextEntry={type?true:false} style={{flex:1,color:'black'}} value={value} onChangeText={(text)=>OnChangeText(text)} keyboardType={keyboardtype ? keyboardtype : 'default'}/>
+      <TextInput placeholder={placeholder} secureTextEntry={type?true:false} style={{flex:1,color:'black',fontSize:responsiveFontSize(1.8)}} value={value} onChangeText={(text)=>OnChangeText(text)} keyboardType={keyboardtype ? keyboardtype : 'default'}/>
     </View>
   )
 }
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     InputIcon:{
         height:responsiveHeight(4),
         width:responsiveHeight(4),
-        marginHorizontal:responsiveWidth(1)
+        marginHorizontal:responsiveWidth(1),
+        
     }
 })

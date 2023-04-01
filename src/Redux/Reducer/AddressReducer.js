@@ -1,13 +1,13 @@
-const {ADD_TO_CART, REMOVE_FROM_CART} = require('../ActionTypes');
+const { Add_Address, Remove_Address } = require('../ActionTypes');
 
 const initialState = [];
 
-const MyReducer = (state = initialState, action) => {
+const AddressReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
+    case Add_Address:
       return [...state, action.payload];
       break;
-    case REMOVE_FROM_CART:
+    case Remove_Address:
       const deletedarray = state.filter((ls, index) => {
         return index !== action.payload;
       });
@@ -17,4 +17,4 @@ const MyReducer = (state = initialState, action) => {
   }
 };
 
-export default MyReducer;
+export default AddressReducer;

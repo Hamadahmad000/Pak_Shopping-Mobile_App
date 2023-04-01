@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: responsiveHeight(2.7),
+    paddingVertical: responsiveHeight(2),
     borderRadius: responsiveWidth(1),
   },
 });

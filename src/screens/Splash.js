@@ -9,10 +9,11 @@ const Splash = () => {
      setTimeout(async() => {
         try {
          const IsLogin = await AsyncStorage.getItem('IsLogin')
-         if(IsLogin == null && IsLogin == undefined && IsLogin == ''){
-          navigation.dispatch(StackActions.replace('Login'))
-         }else{
-          navigation.dispatch(StackActions.replace('Home'))
+         console.log(IsLogin);
+         if(IsLogin === 'true'){
+           navigation.dispatch(StackActions.replace('Home'))
+          }else{
+           navigation.dispatch(StackActions.replace('Login'))
          }
         } catch (error) {
           console.log(error);

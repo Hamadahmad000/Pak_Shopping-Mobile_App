@@ -4,7 +4,7 @@ import CartItems from '../../components/CartItems';
 import {useDispatch, useSelector} from 'react-redux';
 import {FlatList, ScrollView} from 'react-native-gesture-handler';
 
-import {removefromwishlist} from '../../Redux/Action/Action';
+import {additemtocart, removefromwishlist} from '../../Redux/Action/Action';
 import {
   responsiveFontSize,
   responsiveHeight,
@@ -23,22 +23,33 @@ const Wishlist = () => {
         }}>
         WISHLISTS
       </Text>
-
-      <FlatList
-        data={data}
-        renderItem={({item, index}) => {
-          return (
-            <CartItems
-              item={item}
-              onRemoveFromWishlist={() => {
-                dispatch(removefromwishlist(index));
-              }}
-              isWishlist={'HamadMirza'}
-            />
-          );
-        }}
-      />
-   </View>
+{
+  data.length > 0 ? (   <FlatList
+    data={data}
+    renderItem={({item, index}) => {
+      return (
+        <CartItems
+          item={item}
+          onRemoveFromWishlist={() => {
+            dispatch(removefromwishlist(index));
+          }}
+          isWishlist={'HamadMirza'}
+          onAddtoCart={x => {
+            dispatch(additemtocart(x));
+          }}
+        />
+      );
+    }}
+  />):(
+    <View>
+    <Text style={{fontSize:responsiveFontSize(2),color:'black'}}>
+      No item in Wishlist
+    </Text>
+  </View>
+  )
+}
+   
+    </View>
   );
 };
 
